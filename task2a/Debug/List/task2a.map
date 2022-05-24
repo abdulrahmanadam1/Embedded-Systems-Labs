@@ -1,0 +1,260 @@
+###############################################################################
+#
+# IAR ELF Linker V8.11.3.13950/W32 for ARM                03/Dec/2021  22:46:10
+# Copyright 2007-2017 IAR Systems AB.
+#
+#    Output file  =  C:\ECE 474\lab4\task2a\Debug\Exe\task2a.out
+#    Map file     =  C:\ECE 474\lab4\task2a\Debug\List\task2a.map
+#    Command line =  
+#        -f C:\Users\Abdul\AppData\Local\Temp\EW2719.tmp ("C:\ECE
+#        474\lab4\task2a\Debug\Obj\cstartup_M.o" "C:\ECE
+#        474\lab4\task2a\Debug\Obj\Lab4_Task2a.o" "C:\ECE
+#        474\lab4\task2a\Debug\Obj\SSD2119_Display.o" "C:\ECE
+#        474\lab4\task2a\Debug\Obj\SSD2119_Touch.o" -o "C:\ECE
+#        474\lab4\task2a\Debug\Exe\task2a.out" --redirect
+#        _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb --map "C:\ECE
+#        474\lab4\task2a\Debug\List\task2a.map" --config "C:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.0\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
+#        --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000000 to 0x000fffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x20000000 to 0x2003ffff] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                      0x208
+  .intvec            const    0x00000000   0x208  cstartup_M.o [1]
+                            - 0x00000208   0x208
+
+"P1":                                     0x16f4
+  .text              ro code  0x00000208   0xb10  SSD2119_Display.o [1]
+  .text              ro code  0x00000d18   0x514  Lab4_Task2a.o [1]
+  .text              ro code  0x0000122c   0x3c4  SSD2119_Touch.o [1]
+  .rodata            const    0x000015f0   0x1e0  SSD2119_Display.o [1]
+  .text              ro code  0x000017d0    0x38  packbits_init_single.o [5]
+  .text              ro code  0x00001808    0x28  data_init.o [5]
+  .text              ro code  0x00001830    0x22  fpinit_M.o [4]
+  .iar.init_table    const    0x00001854    0x10  - Linker created -
+  .text              ro code  0x00001864     0x2  cstartup_M.o [1]
+  .rodata            const    0x00001868    0x20  SSD2119_Display.o [1]
+  .text              ro code  0x00001888    0x1a  cmain.o [5]
+  .text              ro code  0x000018a2     0x4  low_level_init.o [3]
+  .text              ro code  0x000018a6     0x4  exit.o [3]
+  .text              ro code  0x000018aa     0x2  cstartup_M.o [1]
+  .text              ro code  0x000018ac     0xa  cexit.o [5]
+  .text              ro code  0x000018b6     0x2  cstartup_M.o [1]
+  .text              ro code  0x000018b8    0x14  exit.o [6]
+  .text              ro code  0x000018cc    0x10  cstartup_M.o [1]
+  .rodata            const    0x000018dc     0x8  Lab4_Task2a.o [1]
+  .text              ro code  0x000018e4     0x2  cstartup_M.o [1]
+  .text              ro code  0x000018e6     0x2  cstartup_M.o [1]
+  .text              ro code  0x000018e8     0x2  cstartup_M.o [1]
+  .text              ro code  0x000018ea     0x2  cstartup_M.o [1]
+  .text              ro code  0x000018ec     0x2  cstartup_M.o [1]
+  .text              ro code  0x000018ee     0x2  cstartup_M.o [1]
+  .rodata            const    0x000018f0     0x0  packbits_init_single.o [5]
+  Initializer bytes  const    0x000018f0     0xc  <for P2-1>
+                            - 0x000018fc  0x16f4
+
+"P2", part 1 of 2:                          0x2b
+  P2-1                        0x20000000    0x2b  <Init block>
+    .data            inited   0x20000000     0x4  Lab4_Task2a.o [1]
+    .data            inited   0x20000004     0x4  Lab4_Task2a.o [1]
+    .data            inited   0x20000008     0x4  Lab4_Task2a.o [1]
+    .bss             inited   0x2000000c     0x4  Lab4_Task2a.o [1]
+    .bss             inited   0x20000010     0x4  Lab4_Task2a.o [1]
+    .bss             inited   0x20000014     0x4  Lab4_Task2a.o [1]
+    .bss             inited   0x20000018     0x4  Lab4_Task2a.o [1]
+    .bss             inited   0x2000001c     0x4  Lab4_Task2a.o [1]
+    .bss             inited   0x20000020     0x4  Lab4_Task2a.o [1]
+    .bss             inited   0x20000024     0x2  SSD2119_Display.o [1]
+    .bss             inited   0x20000026     0x2  SSD2119_Display.o [1]
+    .bss             inited   0x20000028     0x2  SSD2119_Display.o [1]
+    .bss             inited   0x2000002a     0x1  Lab4_Task2a.o [1]
+                            - 0x2000002b    0x2b
+
+"P2", part 2 of 2:                        0x8000
+  CSTACK                      0x20000030  0x8000  <Block>
+    CSTACK           uninit   0x20000030  0x8000  <Block tail>
+                            - 0x20008030  0x8000
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Copy/packbits (__iar_packbits_init_single3)
+    1 source range, total size 0xc (27% of destination):
+          0x000018f0   0xc
+    1 destination range, total size 0x2b:
+          0x20000000  0x2b
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                  ro code  ro data  rw data
+    ------                  -------  -------  -------
+C:\ECE 474\lab4\task2a\Debug\Obj: [1]
+    Lab4_Task2a.o             1 300       19       37
+    SSD2119_Display.o         2 832      513        6
+    SSD2119_Touch.o             964
+    cstartup_M.o                 34      520
+    -------------------------------------------------
+    Total:                    5 130    1 052       43
+
+command line: [2]
+    -------------------------------------------------
+    Total:
+
+dl7M_tlf.a: [3]
+    exit.o                        4
+    low_level_init.o              4
+    -------------------------------------------------
+    Total:                        8
+
+m7M_tls.a: [4]
+    fpinit_M.o                   34
+    -------------------------------------------------
+    Total:                       34
+
+rt7M_tl.a: [5]
+    cexit.o                      10
+    cmain.o                      26
+    data_init.o                  40
+    packbits_init_single.o       56
+    -------------------------------------------------
+    Total:                      132
+
+shb_l.a: [6]
+    exit.o                       20
+    -------------------------------------------------
+    Total:                       20
+
+    Gaps                                   4
+    Linker created                        16   32 768
+-----------------------------------------------------
+    Grand Total:              5 324    1 072   32 811
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address   Size  Type      Object
+-----                      -------   ----  ----      ------
+.iar.init_table$$Base   0x00001854          --   Gb  - Linker created -
+.iar.init_table$$Limit  0x00001864          --   Gb  - Linker created -
+?main                   0x00001889         Code  Gb  cmain.o [5]
+ADC_Init                0x0000129b   0x96  Code  Lc  SSD2119_Touch.o [1]
+ADC_Read                0x00001331   0x1e  Code  Lc  SSD2119_Touch.o [1]
+ADC_SetChannel          0x0000134f   0x32  Code  Lc  SSD2119_Touch.o [1]
+ASCII                   0x000015f0  0x1e0  Data  Lc  SSD2119_Display.o [1]
+CSTACK$$Base            0x20000030          --   Gb  - Linker created -
+CSTACK$$Limit           0x20008030          --   Gb  - Linker created -
+Color4                  0x00001868   0x20  Data  Gb  SSD2119_Display.o [1]
+GRN                     0x20000008    0x4  Data  Gb  Lab4_Task2a.o [1]
+LCD_ColorFill           0x0000085f   0x16  Code  Gb  SSD2119_Display.o [1]
+LCD_DrawFilledCircle    0x00000bff  0x104  Code  Gb  SSD2119_Display.o [1]
+LCD_DrawFilledRect      0x00000b9f   0x60  Code  Gb  SSD2119_Display.o [1]
+LCD_DrawLine            0x00000a3d   0xd6  Code  Gb  SSD2119_Display.o [1]
+LCD_DrawPixel           0x00000a09   0x34  Code  Gb  SSD2119_Display.o [1]
+LCD_DrawRect            0x00000b13   0x8c  Code  Gb  SSD2119_Display.o [1]
+LCD_GPIOInit            0x00000209  0x19c  Code  Lc  SSD2119_Display.o [1]
+LCD_Init                0x0000069d  0x1a2  Code  Gb  SSD2119_Display.o [1]
+LCD_PrintChar           0x0000087f   0xd0  Code  Gb  SSD2119_Display.o [1]
+LCD_PrintString         0x0000094f   0x1c  Code  Gb  SSD2119_Display.o [1]
+LCD_SetCursor           0x0000096b    0xe  Code  Gb  SSD2119_Display.o [1]
+LCD_SetTextColor        0x00000979   0x14  Code  Gb  SSD2119_Display.o [1]
+LCD_WriteCommand        0x000003a5  0x15a  Code  Lc  SSD2119_Display.o [1]
+LCD_WriteData           0x000004ff  0x19e  Code  Lc  SSD2119_Display.o [1]
+LED_off                 0x00000e0f   0x4c  Code  Gb  Lab4_Task2a.o [1]
+LED_on                  0x00000da1   0x6e  Code  Gb  Lab4_Task2a.o [1]
+RED                     0x20000000    0x4  Data  Gb  Lab4_Task2a.o [1]
+Region$$Table$$Base     0x00001854          --   Gb  - Linker created -
+Region$$Table$$Limit    0x00001864          --   Gb  - Linker created -
+TL_State                0x2000002a    0x1  Data  Gb  Lab4_Task2a.o [1]
+Timer0A_Handler         0x00000e9f  0x244  Code  Gb  Lab4_Task2a.o [1]
+Timer_init0             0x00000d19   0x88  Code  Gb  Lab4_Task2a.o [1]
+Touch_Init              0x0000122d   0x6e  Code  Gb  SSD2119_Touch.o [1]
+Touch_ReadX             0x00001477   0xf6  Code  Gb  SSD2119_Touch.o [1]
+Touch_ReadY             0x00001381   0xf6  Code  Gb  SSD2119_Touch.o [1]
+YEL                     0x20000004    0x4  Data  Gb  Lab4_Task2a.o [1]
+__cmain                 0x00001889         Code  Gb  cmain.o [5]
+__exit                  0x000018b9   0x14  Code  Gb  exit.o [6]
+__iar_data_init3        0x00001809   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp          0x00001831         Code  Gb  fpinit_M.o [4]
+__iar_packbits_init_single3
+                        0x000017d1   0x38  Code  Gb  packbits_init_single.o [5]
+__iar_program_start     0x000018cd   0x10  Code  Gb  cstartup_M.o [1]
+__iar_systems$$module {Abs}
+                        0x00000001         Data  Gb  command line/config [2]
+__low_level_init        0x000018a3    0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x00000000  0x208  Data  Gb  cstartup_M.o [1]
+_call_main              0x00001895         Code  Gb  cmain.o [5]
+_exit                   0x000018ad         Code  Gb  cexit.o [5]
+_main                   0x0000189f         Code  Gb  cmain.o [5]
+abs                     0x00000875    0xa  Code  Gb  SSD2119_Display.o [1]
+convertColor            0x0000083f   0x20  Code  Gb  SSD2119_Display.o [1]
+cursorX                 0x20000024    0x2  Data  Gb  SSD2119_Display.o [1]
+cursorY                 0x20000026    0x2  Data  Gb  SSD2119_Display.o [1]
+exit                    0x000018a7    0x4  Code  Gb  exit.o [3]
+main                    0x000010e9   0xe6  Code  Gb  Lab4_Task2a.o [1]
+off                     0x20000010    0x4  Data  Gb  Lab4_Task2a.o [1]
+on                      0x2000000c    0x4  Data  Gb  Lab4_Task2a.o [1]
+ped_change              0x20000018    0x4  Data  Gb  Lab4_Task2a.o [1]
+state                   0x20000014    0x4  Data  Gb  Lab4_Task2a.o [1]
+state_change            0x20000020    0x4  Data  Gb  Lab4_Task2a.o [1]
+switch_P                0x00000e5b   0x22  Code  Gb  Lab4_Task2a.o [1]
+switch_S                0x00000e7d   0x22  Code  Gb  Lab4_Task2a.o [1]
+sys_change              0x2000001c    0x4  Data  Gb  Lab4_Task2a.o [1]
+textColor               0x20000028    0x2  Data  Gb  SSD2119_Display.o [1]
+
+
+[1] = C:\ECE 474\lab4\task2a\Debug\Obj
+[2] = command line
+[3] = dl7M_tlf.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+   5 324 bytes of readonly  code memory
+   1 072 bytes of readonly  data memory
+  32 811 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
